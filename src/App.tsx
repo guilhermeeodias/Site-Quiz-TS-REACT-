@@ -158,7 +158,7 @@ function App() {
   const [selectedAnswerText,setSelectedAnswerText] = useState<string | null>(null)
   const [questionAc,setQuestionAc] = useState<number>(0)
 
-  const totalQuestions = quizQuestion.length
+  //const totalQuestions = quizQuestion.length
   const totalQuestionsPerRound = 5
   const currentQuestion = quizQuestion[currentQuestionIndex] 
   
