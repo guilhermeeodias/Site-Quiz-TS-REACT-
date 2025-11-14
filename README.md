@@ -1,73 +1,37 @@
-# React + TypeScript + Vite
+Quiz (React + TS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Esse é um Quiz App interativo construído com React, TypeScript e TailwindCSS. 
 
-Currently, two official plugins are available:
+**[🎮 Jogue a versão ao vivo aqui!](https://quizreactts.netlify.app/)**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Funcionalidades
 
-## Expanding the ESLint configuration
+* **Perguntas Aleatórias:** Cada jogo é único! As perguntas são sorteadas aleatoriamente do banco de dados.
+* **Rodadas de 5 Perguntas:** O jogo funciona em rodadas rápidas de 5 perguntas.
+* **Feedback Instantâneo:** Respostas corretas ficam verdes e incorretas ficam vermelhas.
+* **Contagem de Placar:** O placar (`score`) e o progresso da rodada (`questionAc`) são gerenciados como estados separados.
+* **UI Reativa:** Feito com React Hooks para uma experiência de usuário fluida e sem recarregamento de página.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 🛠️ Tecnologias Utilizadas
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **React:** Para a construção da interface de usuário (UI).
+* **TypeScript:** Para adicionar tipagem estática e segurança ao código.
+* **TailwindCSS:** Para estilização rápida e moderna.
+* **Vite:** Como ferramenta de build e servidor de desenvolvimento.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🧠 Conceitos Praticados
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este projeto foi fundamental para solidificar meus conhecimentos em:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* **Estado (useState):** Gerenciamento complexo de múltiplos estados (`gameStage`, `score`, `questionAc`, `answersDisabled`, etc.).
+* **Renderização Condicional:** Para alternar entre as telas de Início, Quiz e Resultados (`{gameStage === 'quiz' && ...}`).
+* **Renderização de Listas (`.map()`):** Criação dinâmica dos botões de resposta a partir de um array.
+* **Estilo Dinâmico:** Alteração de classes do Tailwind com base no estado para o feedback visual (verde/vermelho).
+* **Lógica de Estado Assíncrona:** O desafio de usar `setQuestionAc(prev => ...)` e checar o valor futuro (`questionAc + 1`) dentro de um `setTimeout`.
+* **TypeScript (Interfaces):** Criação de "contratos" (`interface Question`, `interface Answer`) para garantir a integridade dos dados.
