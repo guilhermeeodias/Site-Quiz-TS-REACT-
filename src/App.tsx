@@ -158,7 +158,7 @@ function App() {
   const [selectedAnswerText,setSelectedAnswerText] = useState<string | null>(null)
   const [questionAc,setQuestionAc] = useState<number>(0)
 
-  const totalQuestions = quizQuestion.length
+  //const totalQuestions = quizQuestion.length
   const totalQuestionsPerRound = 5
   const currentQuestion = quizQuestion[currentQuestionIndex] 
   
@@ -217,7 +217,7 @@ function App() {
 
 
   return (
-    <div className="bg-gradient-to-bl from-slate-900 to-slate-950 flex justify-center items-center h-screen font-sans p-[1px] ">
+    <div className="bg-linear-to-bl from-slate-900 to-slate-950 flex justify-center items-center h-screen font-sans p-[1px] ">
       <div className="main-container bg-[#1e293b] w-full max-w-[40rem] rounded-[1.5rem] shadow-2xl shadow-[#fde047]/10 p-[1rem]">
         
         {gameStage === 'start' && (
