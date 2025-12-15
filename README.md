@@ -20,8 +20,8 @@ Esse é um Quiz App interativo construído com React, TypeScript e TailwindCSS.
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **React:**
-* **TypeScript:** 
+* **React:** 
+* **TypeScript:**
 * **TailwindCSS:** 
 * **Vite:** 
 
@@ -37,6 +37,4 @@ Este projeto foi fundamental para solidificar meus conhecimentos em React e Type
 * **Estilo Dinâmico:** Manipulação de classes do Tailwind baseada em lógica JavaScript para feedback visual (verde/vermelho).
 * **Lógica Assíncrona:** Uso de `setTimeout` para transições suaves entre perguntas.
 * **TypeScript Interfaces:** Definição de contratos de dados (`interface Question`, `interface Answer`) para garantir a integridade da aplicação.
-
----
 
